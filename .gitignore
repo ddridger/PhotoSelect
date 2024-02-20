@@ -280,4 +280,4 @@ projectfiles.tar
 .azure-secrets.json
 
 # Miscellaneous
-/.angular/cache
+*/.angular/[Cc]ache/
