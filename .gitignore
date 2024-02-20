@@ -271,13 +271,7 @@ projectfiles.tar
 # links
 *.lnk
 
-# config
-./src/Aventis.Backend/appsettings.Development.json
-
-# directory for scenario files
-/tests/Aventis.Backend.Tests/scenarios
-
 .azure-secrets.json
 
 # Miscellaneous
-*/.angular/[Cc]ache/
+**/.angular/[Cc]ache/
