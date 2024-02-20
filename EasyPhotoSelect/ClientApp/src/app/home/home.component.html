@@ -1,0 +1,25 @@
+<div class="main-grid">
+  <button mat-button class="button-back"></button>
+  <button mat-button class="button-next"></button>
+
+  <div class="header">
+    <button  class="button-open-folder" mat-button></button>
+
+
+    <!-- <div class="light-dark-mode-switch">
+      <label class="dark-mode-icon"></label>
+      <mat-slide-toggle class="switch" [(ngModel)]="lightMode"></mat-slide-toggle>
+      <div class="light-mode-icon"></div>
+    </div> -->
+    
+    <button mat-button class="button-settings" (click)="openSettings()"></button>
+  </div>
+
+  <div
+    class="footer">
+    <button class="footer-button" *ngFor="let category of settings.categories" mat-button>{{category}}</button>
+
+  </div>
+
+
+</div>

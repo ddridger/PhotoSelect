@@ -1,0 +1,45 @@
+
+
+
+button {
+  border: 1px solid gray;
+}
+
+.dialog-content {
+  display: grid;
+  grid-template-rows : min-content min-content auto;
+  grid-template-areas:
+    "filter"
+    "yesno"
+    "list";
+    align-items: end;
+
+  .dialog-filter {
+    grid-area: filter;
+    align-self: end;
+  }
+
+  .yesno {
+    grid-area: yesno;
+    align-self: end;
+  }
+
+
+  .cat-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    .cat-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .cat-button {
+        justify-self: center;
+        background: url('../../assets/icons/close.svg') no-repeat center center;
+      }
+    }
+  }
+
+}

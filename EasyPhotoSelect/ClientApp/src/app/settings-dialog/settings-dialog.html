@@ -1,0 +1,49 @@
+
+  <mat-dialog-content class="dialog-content">
+
+
+    <mat-checkbox 
+      class="dialog-filter"
+      labelPosition="after"
+      [checked]="filterAssigned"
+      (change)="setfilterAssignedImages($event.checked)">
+        Bereits zugewiesen Bilder herausfiltern
+    </mat-checkbox>
+      <mat-checkbox class="yesno"
+      labelPosition="after"
+      [checked]="yesno"
+      (change)="setYesNo($event.checked)">
+        Nur Ja/Nein Kategorien nutzen
+    </mat-checkbox>
+
+    <mat-form-field>
+      <mat-label>Formate</mat-label>
+      <mat-select matNativeControl >
+        <mat-option *ngFor="let format of formats">{{format}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="cat-flex" [appDisable]="yesno">
+
+      <div class="cat-item">
+        <mat-form-field>
+          <input matInput placeholder="Kategorie" [(ngModel)]="category">
+          <mat-hint align="start">{{hint}}</mat-hint>
+        </mat-form-field>
+        <button mat-button (click)="addCategory()"  >Hinzufügen</button>
+
+      </div>
+
+      <div *ngFor="let category of categories" class="cat-item">
+          <div>{{category}}</div>
+          <button mat-button class="cat-button" (click)="removeCategory(category)"></button>
+      </div>
+
+    </div>
+
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="cancel()">Abbrechen</button>
+    <button mat-button (click)="saveData()" cdkFocusInitial>Speichern</button>
+  </mat-dialog-actions>
+

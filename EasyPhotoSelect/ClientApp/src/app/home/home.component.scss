@@ -1,0 +1,117 @@
+﻿
+
+
+button {
+  border: 1px solid gray;
+}
+
+.main-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  background-color: black;
+  grid-template-rows: min-content auto min-content;
+  grid-template-columns: min-content auto min-content;
+  grid-template-areas:
+    "headerleft header headerright"
+    "back content next"
+    "footerleft footer footerright";
+
+  
+
+  .button-back {
+    grid-area: back;
+    width: 40px;
+    height: 100%;
+    background: url('../../assets/icons/arrow_back.svg') no-repeat center center;
+  }
+
+  .button-next {
+    background-color: teal;
+    grid-area: next;
+    width: 40px;
+    height: 100%;
+    background: url('../../assets/icons/arrow_forward.svg') no-repeat center center;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns : 1fr 1fr;
+    grid-template-areas: "folder settings";
+    grid-area: header;
+    height: 40px;
+
+    .button-open-folder {
+      grid-area: folder;
+      height: 100%;
+      background: url('../../assets/icons/folder_open.svg') no-repeat center center;
+    }
+
+    .format-select {
+      grid-area: settings;
+      margin:0 80px 0 0;
+      height: 100%;
+      width: 100px;
+      justify-self: right;
+    }
+
+    .light-dark-mode-switch {
+      grid-area: settings;
+      justify-self: right;
+      margin: 0 80px 0 0;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 40px auto 40px;
+      grid-template-areas: "dark switch light";
+
+      .dark-mode-icon {
+        grid-area: dark;
+        width: 100%;
+        height: 100%;
+        background: url('../../assets/icons/dark_mode.svg') no-repeat center center;
+      }
+      .light-mode-icon {
+        grid-area: light;
+        width: 100%;
+        height: 100%;
+        background: url('../../assets/icons/light_mode.svg') no-repeat center center;
+      }
+
+      /* The switch - the box around the slider */
+      .switch {
+        grid-area: switch;
+        width: 40px;
+        // height: 34px;
+        margin: 10px 0 0 5px;
+      }
+      
+    }
+
+    .button-settings {
+      grid-area: settings;
+      width: 40px;
+      height: 100%;
+      background: url('../../assets/icons/settings.svg') no-repeat center center;
+      justify-self: right;
+    }
+
+  }
+
+  .footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    width: 100%;
+
+    .footer-button {
+      text-align: center;
+      width: 80px;
+      flex-grow: 1;
+    }
+
+  }
+
+}
+
